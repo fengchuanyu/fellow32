@@ -1,1 +1,23 @@
-<text>hello</text>
+<view class='list-item'>
+  <image src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551693460.jpg'></image>
+  <view class='li-info'>
+    <view class='title'>人间喜剧</view>
+    <view class='info'>
+      上映时间:<text>2019-03-14</text>
+    </view>
+    <view class='info'>主演:艾伦 王智</view>
+  </view>
+  <button>购票</button>
+</view>
+<view class='list-item'>
+  <image src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551693460.jpg'></image>
+  <view class='li-info'>
+    <view class='title'>人间喜剧</view>
+    <view class='info'>
+      上映时间:<text>2019-03-14</text>
+    </view>
+    <view class='info'>主演:艾伦 王智</view>
+  </view>
+  <button>购票</button>
+</view>
+
