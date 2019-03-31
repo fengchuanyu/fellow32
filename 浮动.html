@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      float: left;
+    }
+    .div2{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      float: left;
+    }
+    .div3{
+      height: 300px;
+      width: 300px;
+      background-color: yellow;
+    }
+    .parent::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .div5{
+      display: inline
+    }
+  </style>
+</head>
+<body>
+  <!-- 浮动元素他会脱离文档流 
+    元素浮动后 他所在的空会被释放 其他元素会占用他之前的空间
+  -->
+  <div class="parent">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+  <div class="div3"></div>
+
+  <!-- <span>1</span>
+  <span>2</span>
+  <span>3</span>
+  <span>4</span> -->
+
+  <div class="div5">1</div>
+  <div class="div5">2</div>
+  <div class="div5">3</div>
+  <div class="div5">4</div>
+</body>
+</html>
