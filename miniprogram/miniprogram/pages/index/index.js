@@ -5,27 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listItem:[
-      {
-        imgUrl:"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551693460.jpg",
-        title:"人间喜剧",
-        time:"2019-03-14",
-        actor:"艾伦 王智"
-      },
-      {
-        imgUrl: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551693460.jpg",
-        title: "人间喜剧2",
-        time: "2019-03-14",
-        actor: "艾伦 王智"
-      }
-    ]
+    listItem:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this;
+    wx.request({
+      url: 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=10',
+      success(res){
+        var thisList = res.data.subject_collection_items;
+        console.log(res.data.subject_collection_items);
+        // listItem = thisList
+        _this.setData({
+          listItem: thisList
+        })
+      }
+    })
   },
 
   /**

@@ -20,15 +20,17 @@
   </view>
   <button>购票</button>
 </view> -->
-<block wx:for="{{listItem}}">
+<block wx:for="{{listItem}}" wx:key="title">
 <view class='list-item'>
-  <image src="{{item.imgUrl}}"></image>
+  <image src="{{item.cover.url}}"></image>
   <view class='li-info'>
     <view class='title'>{{item.title}}</view>
     <view class='info'>
-      上映时间:<text>{{item.time}}</text>
+      上映时间:<text>{{item.year}}</text>
     </view>
-    <view class='info'>主演:{{item.actor}}</view>
+    <view class='info'>主演:
+      <text wx:for="{{item.actors}}">{{item}}</text>
+    </view>
   </view>
   <button>购票</button>
 </view>

@@ -22,6 +22,7 @@
 }
 .list-item .info{
   font-size: 13px;
+  width: 150px;
 }
 .list-item text{
   color: #faaf00
