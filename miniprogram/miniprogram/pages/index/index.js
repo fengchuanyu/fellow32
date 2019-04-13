@@ -12,7 +12,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  getData:function(){
+  getData: function (isRefresh){
+    if (isRefresh == "refresh"){
+      console.log("刷新")
+    }else{
+      console.log("触底")
+    }
     wx.showLoading({
       title: '加载中···',
     })
@@ -69,7 +74,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getData();
+    this.getData("refresh");
   },
 
   /**
