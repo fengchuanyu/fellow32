@@ -1,4 +1,4 @@
-<view class='list-item'>
+<!-- <view class='list-item'>
   <image src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551693460.jpg'></image>
   <view class='li-info'>
     <view class='title'>人间喜剧</view>
@@ -19,5 +19,19 @@
     <view class='info'>主演:艾伦 王智</view>
   </view>
   <button>购票</button>
+</view> -->
+<block wx:for="{{listItem}}">
+<view class='list-item'>
+  <image src="{{item.imgUrl}}"></image>
+  <view class='li-info'>
+    <view class='title'>{{item.title}}</view>
+    <view class='info'>
+      上映时间:<text>{{item.time}}</text>
+    </view>
+    <view class='info'>主演:{{item.actor}}</view>
+  </view>
+  <button>购票</button>
 </view>
+</block>
+
 

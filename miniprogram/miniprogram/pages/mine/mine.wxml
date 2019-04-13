@@ -1,2 +1,8 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<!-- <view>1</view>
+<view>2</view>
+<view>3</view>
+<view>4</view>
+<view>5</view>
+<view>6</view> -->
+<!-- {{num}} -->
+<view wx:for="{{num}}">{{item}}</view>
