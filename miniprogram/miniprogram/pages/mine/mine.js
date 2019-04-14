@@ -5,9 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num:[1, 2, 3, 4]
+    
   },
-
+  goMessage:function(){
+    wx.navigateTo({
+      url: '../message/message',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,1 +1,11 @@
-/* pages/mine/mine.wxss */
+.user-avatar{
+  width: 70px;
+  height: 70px;
+  margin:20px auto;
+}
+.nick-name{
+  text-align: center;
+}
+.btn-bar{
+  margin:20px;
+}

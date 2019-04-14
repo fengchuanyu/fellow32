@@ -1,8 +1,17 @@
-<!-- <view>1</view>
-<view>2</view>
-<view>3</view>
-<view>4</view>
-<view>5</view>
-<view>6</view> -->
-<!-- {{num}} -->
-<view wx:for="{{num}}">{{item}}</view>
+<view class='user-avatar'>
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+<view class='nick-name'>
+  <open-data type="userNickName"></open-data>
+</view>
+
+<view class='btn-bar'>
+  <van-button 
+  bindtap='goMessage'
+  type="primary 
+  size="large"
+  >大号按钮</van-button>
+</view>
+
+
+

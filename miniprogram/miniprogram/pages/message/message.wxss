@@ -1,0 +1,6 @@
+.btn-bar{
+  margin:20px;
+}
+.content{
+  margin:15px;
+}
