@@ -9,7 +9,12 @@ Page({
     num:0,
     total:0
   },
-
+  goDetail:function(event){
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?id='+id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

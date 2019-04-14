@@ -21,7 +21,11 @@
   <button>购票</button>
 </view> -->
 <block wx:for="{{listItem}}" wx:key="title">
-<view class='list-item'>
+<view 
+class='list-item'  
+bindtap='goDetail'
+data-id='{{item.id}}'
+>
   <image src="{{item.cover.url}}"></image>
   <view class='li-info'>
     <view class='title'>{{item.title}}</view>
