@@ -6,18 +6,36 @@ Page({
    */
   data: {
     listItem:[],
-    num:0
+    num:0,
+    total:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  getData: function (isRefresh){
-    if (isRefresh == "refresh"){
-      console.log("刷新")
+  isRefresh: function (isRefresh){
+    var _this = this;
+    var listLength = this.data.listItem.length;
+    var total = this.data.total;
+    if (isRefresh == "refresh") {
+      _this.setData({
+        listItem: [],
+        num: 0
+      },function(){
+        _this.getData()
+      })
+    } else if(listLength>=total && total!=0){
+      wx.showToast({
+        title: '无数据',
+        icon: 'none',
+        duration: 1000
+      })
     }else{
-      console.log("触底")
+      _this.getData();
     }
+  },
+
+  getData: function (){
     wx.showLoading({
       title: '加载中···',
     })
@@ -25,12 +43,14 @@ Page({
     wx.request({
       url: 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start='+this.data.num+'&count=10',
       success(res) {
+        console.log(res)
         var thisList = res.data.subject_collection_items;
         console.log(res.data.subject_collection_items);
         // listItem = thisList
         _this.setData({
           listItem: _this.data.listItem.concat(thisList),
-          num:_this.data.num+10
+          num:_this.data.num+10,
+          total:res.data.total
         },function(){
           wx.hideLoading();
           wx.stopPullDownRefresh();
@@ -74,14 +94,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getData("refresh");
+    this.isRefresh("refresh");
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getData();
+    this.isRefresh();
   },
 
   /**
