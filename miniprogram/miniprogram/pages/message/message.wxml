@@ -16,3 +16,4 @@
   <view class='content'>{{item.message}}</view>
 </van-panel>
 </block>
+
