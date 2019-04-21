@@ -15,6 +15,14 @@
     a{
       text-decoration: none;
     }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    fieldset{
+      border: 0;
+    }
     /* header start */
     .header{
       height: 98px;
@@ -106,6 +114,85 @@
     .text-info .right{
       float: right;
     }
+    .lf-footer{
+      width: 348px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -174px;
+    }
+    .login-type{
+      color: #bbb;
+      text-align: center;
+      border-top:1px solid #ddd;
+    }
+    .login-type legend{
+      margin: 0 auto;
+    }
+    .logo-icon{
+      text-align: center;
+    }
+    .logo-icon a{
+      margin:20px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: blue;
+    }
+    .logo-icon i{
+      display: block;
+      background: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png") no-repeat;
+    }
+    .logo-icon .qq{
+      background-color:#0288d1
+    }
+    .logo-icon .qq i,.logo-icon .sina i{
+      width: 18px;
+      height: 18px;
+      margin: 4px auto 0;
+      background-position: -19px 0;
+    }
+    .logo-icon .sina{
+      background-color: #d32f2f;
+    }
+    .logo-icon .sina i{
+      background-position: -38px 0;
+    }
+    .logo-icon .alipay{
+      background-color: #0ae;
+    }
+    .logo-icon .alipay i{
+      background-position: -57px 0;
+      width: 25px;
+      height: 18px;
+      margin-top: 6px;
+      margin-left: 4px;
+    }
+    .logo-icon .wechat{
+      background-color: #00d20d;
+    }
+    .logo-icon .wechat i{
+      background-position: -83px 0;
+      width: 24px;
+      height: 18px;
+      margin: 4px auto 0;
+    }
+    .footer{
+      text-align: center;
+      color: #757575;
+      font-size: 14px;
+    }
+    .footer ul{
+      margin:20px 0;
+    }
+    .footer li{
+      display: inline-block;
+    }
+    .footer li a{
+      padding: 0 20px;
+      color: #757575
+    }
   </style>
 </head>
 <body>
@@ -130,7 +217,7 @@
               <input type="password" placeholder="密码">
             </div>
             <button>登录</button>
-            <div class="text-info">
+            <div class="text-info clearfix">
               <div class="left">
                 <a href="javascript:void(0);">手机短信登录/注册</a>
               </div>
@@ -142,10 +229,39 @@
             </div>
           </div>
         </div>
-        <div class="lf-footer"></div>
+        <div class="lf-footer">
+          <fieldset class="login-type">
+            <legend>其他方式登录</legend>
+          </fieldset>
+          <div class="logo-icon">
+            <a class="qq" href="javascript:void(0);">
+              <i></i>
+            </a>
+            <a class="sina" href="javascript:void(0);">
+              <i></i>
+            </a>
+            <a class="alipay" href="javascript:void(0);">
+              <i></i>
+            </a>
+            <a class="wechat" href="javascript:void(0);">
+              <i></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="footer"></div>
+  <div class="footer">
+    <ul>
+      <li><a href="javascript:void(0);">简体</a>|</li>
+      <li><a href="javascript:void(0);">简体</a>|</li>
+      <li><a href="javascript:void(0);">简体</a>|</li>
+      <li><a href="javascript:void(0);">简体</a>|</li>
+      <li><a href="javascript:void(0);">简体</a></li>
+    </ul>
+    <p>小米公司版权所有-京ICP备10046444-
+        <img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png">
+      京公网安备11010802020134号-京ICP证110507号</p>
+  </div>
 </body>
 </html>
