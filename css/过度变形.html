@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1,.div2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 100px auto;
+      transition: all 1s ease;
+      position: absolute;
+      top: 0;
+    }
+    .div1:hover{
+      transform: rotate(45deg) scale(2);
+      width: 200px; 
+
+    }
+    .div2{
+      background-color: blue;
+    }
+    .div1{
+      /* z-index: 10; */
+      transform:translateZ(100px)
+    }
+    .parent{
+      transform-style: preserve-3d;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+</body>
+</html>
