@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1165088_v86ck3621h.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1165088_52kwye9y1vg.css">
   <style>
     *{
       margin: 0;
@@ -119,6 +119,126 @@
     .topbar-cart:hover a{
       color: #ff6700;
     }
+    .sh-content{
+      width: 1226px;
+      height: 100px;
+      margin:0 auto;
+    }
+    .sh-content .logo{
+      width: 55px;
+      height: 55px;
+      background-color: #ff6700;
+      margin-top: 20px;
+    }
+    .sh-content .logo::after{
+      content: "";
+      display: block;
+      height: 55px;
+      width: 55px;
+      background-image: url("../image/mi-logo.png");
+    }
+    .sh-content .nav,.sh-content .logo{
+      float: left;
+    }
+    .sh-content .search{
+      float:right;
+    }
+    .sh-content .nav ul{
+      margin-left: 100px;
+    }
+    .sh-content .nav li{
+      float: left;
+      height: 100px;
+      line-height: 100px;
+      padding: 0 10px;
+      
+    }
+    .sh-content .nav a{
+      font-size: 16px;
+      color: #333;
+    }
+    .sh-content .search{
+      margin-top: 23px;
+      position: relative;
+    }
+    .sh-content .search input{
+      width: 223px;
+      height: 48px;
+      padding: 0 10px;
+      border: 1px solid #e0e0e0;
+      outline: none;
+      float: left;
+    }
+    .sh-content .search .btn{
+      height: 48px;
+      width: 48px;
+      background-color: #fff;
+      float: left;
+      border: 1px solid #e0e0e0;
+      text-align: center;
+      line-height: 48px;
+      color: #333;
+
+    }
+    .sh-content .search .search-info{
+      position: absolute;
+      top:10px;
+      left: 100px;
+    }
+    .sh-content .search-info span{
+      padding: 0 5px;
+      font-size: 12px;
+      background: #eee;
+      color: #757575
+    }
+    .slider-nav{
+      /* vw 视口宽度 */
+      width: 100vw;
+      height: 229px;
+      box-shadow: 0 5px 10px rgba(0,0,0,.5);
+      position: absolute;
+      top:100px;
+      left: 0;
+    }
+    .site-header{
+      position: relative;
+    }
+    .nav-info{
+      position: absolute;
+      top:100px;
+      left: 0;
+      widows: 100vw;
+      margin:0 auto;
+
+    }
+    .nav-info li span{
+      height: 18px;
+      padding: 1px 20px;
+      border: 1px solid #ff6700;
+      color: #FF6700;
+    }
+    .nav-info li img{
+      width: 160px;
+      height: 110px;
+      margin: 10px 0;
+    }
+    .nav .nav-info li{
+      text-align: center;
+      width: 160px;
+      line-height: normal;
+      font-size: 16px;
+      position: relative;
+    }
+    .nav .nav-info li:not(.first):before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top:30px;
+      width: 1px;
+      height: 110px;
+      background-color: #ddd;
+    }
   </style>
 </head>
 <body>
@@ -164,7 +284,64 @@
       </div>
     </div>
   </div>
-  <div class="site-header"></div>
+  <div class="site-header">
+    <div class="sh-content clearfix">
+      <div class="logo">
+
+      </div>
+      <div class="nav">
+        <ul class="clearfix">
+            <li>
+              <a href=" ">小米手机</a >
+              <div class="nav-info">
+                <ul class="clearfix" >
+                  <li class="first">
+                    <span>新品</span>
+                    <img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt="">
+                    <p>小米9</p>
+                    <p>2999元</p>
+                  </li>
+                  <li>
+                      <span>新品</span>
+                      <img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt="">
+                      <p>小米9</p>
+                      <p>2999元</p>
+                    </li>
+                    <li>
+                        <span>新品</span>
+                        <img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt="">
+                        <p>小米9</p>
+                        <p>2999元</p>
+                      </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="javascript:void(0);">红米</a ></li>
+            <li><a href="javascript:void(0);">电视</a ></li>
+            <li><a href="javascript:void(0);">笔记本</a ></li>
+            <li><a href="javascript:void(0);">家电</a ></li>
+            <li><a href="javascript:void(0);">新品</a ></li>
+            <li><a href="javascript:void(0);">注路由器</li>
+            <li><a href="javascript:void(0);">智能硬件</a ></li>
+            <li><a href="javascript:void(0);">服务</a ></li>
+            <li><a href="javascript:void(0);">社区</a ></li>
+        </ul>
+        <div class="slider-nav">
+
+        </div>
+      </div>
+      <div class="search">
+        <input type="text">
+        <div class="btn">
+          <i class="iconfont icon-search"></i>
+        </div>
+        <div class="search-info">
+          <span>小米9</span>
+          <span>小米9se</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container"></div>
   <div class="row"></div>
 </body>
