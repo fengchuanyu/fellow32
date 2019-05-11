@@ -62,6 +62,7 @@
       background-color: #424242;
       padding: 0 10px;
       margin-left: 10px;
+      position: relative;
     }
     .st-content .left a:hover{
       color: #fff;
@@ -95,6 +96,28 @@
     }
     .down:hover .drop-down{
       display:block;
+    }
+    .cart-menu{
+      width: 316px;
+      height: 40px;
+      box-shadow: 0 5px 10px rgba(0,0,0,.5);
+      position: absolute;
+      top:40px;
+      right: 0;
+      text-align: center;
+      visibility: hidden;
+      transition: all .1s ease;
+    }
+    .topbar-cart:hover{
+      background-color: #fff;
+      
+    }
+    .topbar-cart:hover .cart-menu{
+      height: 100px;
+      visibility: visible;
+    }
+    .topbar-cart:hover a{
+      color: #ff6700;
     }
   </style>
 </head>
@@ -134,6 +157,9 @@
         </div>
         <div class="topbar-cart">
           <a href=""><i class="iconfont icon-car"></i>购物车(0)</a>
+          <div class="cart-menu">
+            <span>购物车空！</span>
+          </div>
         </div>
       </div>
     </div>
