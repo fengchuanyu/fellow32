@@ -244,16 +244,20 @@
       transition: all .3s ease;
       visibility: hidden;
     }
-    .nav:hover .slider-nav{
+
+    .nav:hover .slider-nav {
       height: 229px;
       visibility: visible;
     }
+
     .site-header {
       position: relative;
     }
-    .nav:hover .nav-info{
+
+    .nav:hover .nav-info {
       height: 230px;
     }
+
     .nav-info {
       height: 0;
       overflow: hidden;
@@ -266,16 +270,19 @@
       transform: translateX(-50%);
       transition: all .3s ease;
     }
-    .nav .nav-info ul{
-      padding:15px 0;
+
+    .nav .nav-info ul {
+      padding: 15px 0;
       margin-left: 0;
       /* position: absolute;
       left: 50%;
       transform: translateX(-50%); */
     }
-    .nav .nav-info li{
+
+    .nav .nav-info li {
       height: auto;
     }
+
     .nav-info li span {
       height: 18px;
       padding: 1px 20px;
@@ -307,62 +314,143 @@
       height: 110px;
       background-color: #ddd;
     }
-    .container{
+
+    .container {
       width: 1226px;
-      margin:0 auto;
+      margin: 0 auto;
       position: relative;
     }
-    .c-silder{
+
+    .c-silder {
       background-color: blue;
       height: 460px;
     }
-    .c-nav{
+
+    .c-nav {
       position: absolute;
       top: 0;
       left: 0;
-      
-      background-color: rgba(0,0,0,.6);
+
+      background-color: rgba(0, 0, 0, .6);
       width: 234px;
       height: 460px;
     }
-    .c-nav ul{
-      padding:20px 0;
+
+    .c-nav ul {
+      padding: 20px 0;
     }
-    .c-nav li{
+
+    .c-nav li {
       height: 42px;
       line-height: 42px;
       /* position: relative; */
     }
-    .c-nav li:hover{
+
+    .c-nav li:hover {
       background-color: #ff6700;
     }
-    .c-nav li:hover .cn-list{
+
+    .c-nav li:hover .cn-list {
       display: block;
     }
-    .c-nav a{
+
+    .c-nav a {
       color: #fff;
       font-size: 14px;
       padding-left: 30px;
-      
+
     }
-    .c-nav i{
+
+    .c-nav i {
       /* position: absolute;
       right: 20px; */
       float: right;
       margin-right: 20px
     }
-    .c-silder img{
+
+    .c-silder img {
       height: 460px;
       width: 1226px;
     }
-    .cn-list{
+
+    .cn-list {
       width: 992px;
       height: 460px;
       background-color: #fff;
       position: absolute;
-      top:0;
+      top: 0;
       left: 234px;
-      box-shadow: 0 0 3px rgba(0,0,0,.6);
+      box-shadow: 0 0 3px rgba(0, 0, 0, .6);
+      display: none;
+    }
+
+    .row {
+      width: 1226px;
+      margin: 15px auto;
+      
+    }
+
+    .row .row-left {
+      width: 234px;
+      height: 170px;
+      background-color: #5f5750;
+      float: left;
+    }
+
+    .row .row-right {
+      float: left;
+    }
+
+    .row .row-right li {
+      margin-left: 14px;
+      float: left;
+      width: 316px;
+      height: 170px;
+      background-color: blue;
+    }
+
+    .row .row-right img {
+      width: 316px;
+      height: 170px;
+    }
+
+    .row-left li {
+      float: left;
+      width: 70px;
+      height: 82px;
+      padding: 0 3px;
+      font-size: 12px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+
+    .row-left li i {
+      display: block;
+      margin-top: 18px;
+    }
+    .row-left li::after,.row-left li::before{
+      content: "";
+      position: absolute;
+      display: block;
+      background-color:  #665e57;
+    }
+    .row-left li::after{
+      width: 1px;
+      height: 70px;
+      top: 6px;
+      left: 0;
+    }
+    .row-left li::before{
+      height: 1px;
+      width: 64px;
+      top: -1px;
+      left: 6px;
+    }
+    .row-left .top::before{
+      display: none;
+    }
+    .row-left .left::after{
       display: none;
     }
   </style>
@@ -506,41 +594,41 @@
           </a>
         </li>
         <li>
-            <a href="#">
-              手记、电话卡
-              <i class="iconfont icon-right"></i>
-            </a>
-          </li>
-          <li>
-              <a href="#">
-                手记、电话卡
-                <i class="iconfont icon-right"></i>
-              </a>
-            </li>
-            <li>
-                <a href="#">
-                  手记、电话卡
-                  <i class="iconfont icon-right"></i>
-                </a>
-              </li>
-              <li>
-                  <a href="#">
-                    手记、电话卡
-                    <i class="iconfont icon-right"></i>
-                  </a>
-                </li>
-                <li>
-                    <a href="#">
-                      手记、电话卡
-                      <i class="iconfont icon-right"></i>
-                    </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                        手记、电话卡
-                        <i class="iconfont icon-right"></i>
-                      </a>
-                    </li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="c-silder">
@@ -549,7 +637,43 @@
       </div>
     </div>
   </div>
-  <div class="row"></div>
+  <div class="row">
+    <div class="row-left">
+      <ul>
+        <li class="left top">
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+        <li class="top">
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+        <li class="top">
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+        <li class="left">
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+        <li>
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+        <li>
+          <i class="iconfont icon-car"></i>
+          选购手机
+        </li>
+      </ul>
+    </div>
+    <div class="row-right">
+      <ul>
+        <li><img src="https://i1.mifile.cn/a4/xmad_15566290288789_EQdZS.jpg" alt=""></li>
+        <li><img src="https://i1.mifile.cn/a4/xmad_15566290288789_EQdZS.jpg" alt=""></li>
+        <li><img src="https://i1.mifile.cn/a4/xmad_15566290288789_EQdZS.jpg" alt=""></li>
+      </ul>
+    </div>
+  </div>
 </body>
 
 </html>
