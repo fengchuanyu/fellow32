@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1165088_52kwye9y1vg.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1165088_nc6bcmx1xu.css">
   <style>
     * {
       margin: 0;
@@ -307,6 +307,64 @@
       height: 110px;
       background-color: #ddd;
     }
+    .container{
+      width: 1226px;
+      margin:0 auto;
+      position: relative;
+    }
+    .c-silder{
+      background-color: blue;
+      height: 460px;
+    }
+    .c-nav{
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      background-color: rgba(0,0,0,.6);
+      width: 234px;
+      height: 460px;
+    }
+    .c-nav ul{
+      padding:20px 0;
+    }
+    .c-nav li{
+      height: 42px;
+      line-height: 42px;
+      /* position: relative; */
+    }
+    .c-nav li:hover{
+      background-color: #ff6700;
+    }
+    .c-nav li:hover .cn-list{
+      display: block;
+    }
+    .c-nav a{
+      color: #fff;
+      font-size: 14px;
+      padding-left: 30px;
+      
+    }
+    .c-nav i{
+      /* position: absolute;
+      right: 20px; */
+      float: right;
+      margin-right: 20px
+    }
+    .c-silder img{
+      height: 460px;
+      width: 1226px;
+    }
+    .cn-list{
+      width: 992px;
+      height: 460px;
+      background-color: #fff;
+      position: absolute;
+      top:0;
+      left: 234px;
+      box-shadow: 0 0 3px rgba(0,0,0,.6);
+      display: none;
+    }
   </style>
 </head>
 
@@ -431,7 +489,66 @@
       </div>
     </div>
   </div>
-  <div class="container"></div>
+  <div class="container">
+    <div class="c-nav">
+      <ul>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+          <div class="cn-list"></div>
+        </li>
+        <li>
+          <a href="#">
+            手记、电话卡
+            <i class="iconfont icon-right"></i>
+          </a>
+        </li>
+        <li>
+            <a href="#">
+              手记、电话卡
+              <i class="iconfont icon-right"></i>
+            </a>
+          </li>
+          <li>
+              <a href="#">
+                手记、电话卡
+                <i class="iconfont icon-right"></i>
+              </a>
+            </li>
+            <li>
+                <a href="#">
+                  手记、电话卡
+                  <i class="iconfont icon-right"></i>
+                </a>
+              </li>
+              <li>
+                  <a href="#">
+                    手记、电话卡
+                    <i class="iconfont icon-right"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="#">
+                      手记、电话卡
+                      <i class="iconfont icon-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                        手记、电话卡
+                        <i class="iconfont icon-right"></i>
+                      </a>
+                    </li>
+      </ul>
+    </div>
+    <div class="c-silder">
+      <div>
+        <img src="https://i1.mifile.cn/a4/xmad_15581082003113_LbhJR.jpg" alt="">
+      </div>
+    </div>
+  </div>
   <div class="row"></div>
 </body>
 
