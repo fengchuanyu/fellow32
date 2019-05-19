@@ -66,16 +66,27 @@
       width: 6px;
       height: 20px;
       background-color: red;
+      animation: run 216000s linear infinite;
     }
     .clock .minute{
       width: 4px;
-      height: 26px;
+      height: 30px;
       background-color:blue;
+      animation: run 3600s linear infinite;
     }
     .clock .second{
       width: 2px;
-      height: 30px;
-      background-color: yellow;
+      height: 40px;
+      background-color: green;
+      animation: run 60s linear infinite;
+    }
+    @keyframes run{
+      0%{
+        transform:translateX(-50%) rotate(180deg) 
+      }
+      100%{
+        transform:translateX(-50%) rotate(540deg) 
+      }
     }
   </style>
 </head>
