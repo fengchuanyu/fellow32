@@ -7,17 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  1<br/>
-  12<br/>
+  
   <script>
-    var date = new Date();
-    var year = date.getFullYear();
-    if(year%4==0 && year%100!=0 || year%400 == 0){
-      console.log(year+"是闰年");
-    }else{
-      console.log(year+"是平年");
-      
-    }
+   var jc = 1;
+   for(var i=1;i<=10;i++){
+    jc *= i;
+   }
+   console.log(jc);
   </script>
 </body>
 </html>
