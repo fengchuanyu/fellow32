@@ -8,18 +8,18 @@
 </head>
 <body>
   <script>
-    // 89 * 58588
-    // function foo(a,b){
-    //   return a*b;
+    // for(var i=0;true;i++){
+    //   console.log(i);
+    //   if(i>10){
+    //     break; //结束所有循环
+    //   }
     // }
-    // var num = foo(89,5566);
-    // console.log(num);
-
-    function foo(){
-      return 0; //当执行到return的时候 后面的语句将不会被执行
-      console.log(3);
+    for(var i=0;i<10;i++){
+      if(i==6){
+        continue; //结束本次循环
+      }
+      console.log(i);
     }
-    foo();
   </script>
 </body>
 </html>
