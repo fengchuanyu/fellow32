@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--6.	编写一个带一个参数（指定显示多少层星号“*”的函数，它在页面止输出的一个5层星号“*”图案类似。 -->
+  <script>
+
+
+
+    function foo(key) {
+      for (var i = 1; i <= key; i++) {
+        for (var k = 0; k < key - i; k++) {
+          document.write("&nbsp;")
+        }
+        for (var j = 0; j < i; j++) {
+          document.write("*&nbsp;")
+        }
+        document.write("<br/>")
+      }
+    }
+    foo(20)
+  </script>
+</body>
+
+</html>

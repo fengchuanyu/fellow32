@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+  <!-- 4.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。 -->
+<body>
+  <script>
+    function foo(x){
+      var key = false;
+      for(var i=2;i<x;i++){
+        if(x%i==0){
+          key = false;
+          break;
+        }else{
+          key = true;
+        }
+      }
+      return key;
+    }
+    var arr = [];
+    for(var i=100;i<1000;i++){
+      if(foo(i)){
+        arr.push(i);
+      }
+    }
+    
+    for(var j=0;j<arr.length;j++){
+      document.write(arr[j]+"&nbsp");
+      if((j+1)%6==0){
+        document.write("<br/>")
+      }
+    }
+    
+  </script>
+</body>
+
+</html>
