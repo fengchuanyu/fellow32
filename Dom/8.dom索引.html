@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+    <li>f</li>
+  </ul>
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    var arr = [];
+    for(var i=0;i<aLi.length;i++){
+      arr.push(i+1);  
+      aLi[i].index = i;
+      aLi[i].onclick = function(){
+        console.log(this.index)
+        // console.log(i);
+      }
+    }
+
+    // var a = "nihao"
+    // var obj = {
+    //   target:"<div1>",
+    //   a:"hello",
+    //   click1:function(){
+    //     console.log(this.a)
+    //   }
+    // }
+    // obj.click1();
+    // obj.index = 11
+  
+  </script>
+  
+</body>
+</html>
