@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">hello</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <span class="span1" test="123">fellow32</span>
+  <script>
+    var oBox = document.getElementById("box");
+    var aLi = document.getElementsByTagName("li");
+    var aSpan = document.getElementsByClassName("span1");
+    var attr = aSpan[0].getAttribute("test");
+
+    aSpan[0].onmouseover = function(e){
+      console.log(1122);
+      
+    }
+
+    
+    // aSpan[0].setAttribute("class","active");
+    // aSpan[0].className = 'span1 active';
+
+    // aSpan[0].classList.add("active");
+    // aSpan[0].classList.remove("active");
+
+
+    // console.log(attr);
+    // aSpan[0].style.backgroundColor = 'red';
+    
+    // oBox.innerText = 'hello World'
+    // aSpan[0].innerText = 'hello fellow32'
+    // console.log(oBox);
+  </script>
+</body>
+</html>
