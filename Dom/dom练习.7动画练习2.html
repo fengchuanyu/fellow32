@@ -34,8 +34,9 @@
         _this.timer = setInterval(function(){
           if(_this.offsetWidth > 400){
             clearInterval(_this.timer);
+          }else{
+            _this.style.width = _this.offsetWidth + 10 + "px";
           }
-          _this.style.width = _this.offsetWidth + 10 + "px";
         },16)
       }
 
@@ -43,10 +44,11 @@
         var _this = this;
         clearInterval(_this.timer)
         _this.timer2 = setInterval(function(){
-          if(_this.offsetWidth<200){
+          if(_this.offsetWidth<=200){
             clearInterval(_this.timer2)
+          }else{
+            _this.style.width = _this.offsetWidth - 10 + "px";
           }
-          _this.style.width = _this.offsetWidth - 10 + "px";
         },16)
       }
     }
