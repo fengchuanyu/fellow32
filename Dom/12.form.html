@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div>
+    <form name="testform" action="" id="form-sub" method="POST">
+      <input type="text" name="uname">
+      <input type="checkbox" name="hobby" value="1">
+      <input type="checkbox" name="hobby" value="2">
+      <input type="radio" name="sex" value="1">
+      <input type="radio" name="sex" value="2">
+      <select name="sel" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <input type="submit">
+    </form>
+  </div>
+  <script>
+    var oForm = document.getElementById("form-sub");
+    oForm.hobby[1].checked = true
+    oForm.onsubmit = function(){
+      console.log(this)
+      for(var i=0; i<this.hobby.length; i++){
+        console.log(this.hobby[i].checked)
+      }
+      console.log(this.sex.value)
+      console.log(this.sel.value)
+      return false 
+    }
+  </script>
+</body>
+</html>
