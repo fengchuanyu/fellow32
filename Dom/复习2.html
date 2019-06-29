@@ -16,15 +16,42 @@
     <li>f</li>
   </ul>
   <script>
-    var aLi = document.getElementsByTagName("li");
-    
-    for(var i= 0;i<aLi.length;i++){
-      // aLi[i].index = i;
-      aLi[i].onclick = function(e){
-        console.log(this.index);
-      }
-    }
+    // var a = 10;
+    // var foo = function() {
+    //   console.log(a);
+    // }
+    // (function(){
+    //   console.log(a);
+    // }())
 
+    //闭包是指外部函数里声明内部函数，
+    //内部函数引用外部函数里的局部变量，
+    //这样当外部函数调用完毕以后，局部变量不被释放，可以一直使用。
+
+    
+    // var aLi = document.getElementsByTagName("li");
+    // for(var i= 0;i<aLi.length;i++){
+    //   // aLi[i].index = i;
+    //   (function(index){
+    //     aLi[index].onclick = function(e){
+    //       console.log(index);
+    //     }
+    //   }(i))
+    // }
+
+    // 5-10的随机数字
+
+
+
+    // console.log(sum(2,3))//5
+    // console.log(sum(2)(3))//5
+
+    // function foo(){
+    //   console.log(arguments);
+    // }
+    // foo(2,3);
+
+    
 
       // setTimeout(function(){
       //   console.log(20);

@@ -9,10 +9,22 @@
 <body>
   <div id="box"></div>
   <script>
-    var a = document.createElement("h1");
-    a.innerText = "123"
-    var oBox = document.getElementById("box");
-    oBox.appendChild(a)
+    // var a = document.createElement("h1");
+    // a.innerText = "123"
+    // var oBox = document.getElementById("box");
+    // oBox.appendChild(a)
+
+
+    function sum(x,y) {
+      if(arguments.length>1){
+        return x+y
+      }
+      return function(y) {
+        return x + y;
+      };
+    }
+    console.log(sum(2,3))
+    console.log(sum(2)(3))
   </script>
 </body>
 </html>
