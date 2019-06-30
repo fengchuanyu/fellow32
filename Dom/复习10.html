@@ -8,14 +8,26 @@
 </head>
 <body>
   <script>
-    //第七题（字节跳动）
+    // //第七题（字节跳动）
     var user=[
       {id:1,name:'a'},
       {id:2,name:'b'},
       {id:3,name:'a'},
       {id:4,name:'b'}
     ]
+
+
     unique(user)//a b
+    function unique(arr){
+      var temp = [];
+      for(var i=0;i<arr.length;i++){
+        if(temp.indexOf(arr[i].name)==-1){
+          temp.push(arr[i].name)
+        }
+      }
+      console.log(temp);
+    }
+    
   </script>
 </body>
 </html>
