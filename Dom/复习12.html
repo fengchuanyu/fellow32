@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //第九题（字节跳动）
+    // const repeatfunc = repeat(console.log,5,500);
+    // repeatfunc('hello,wrold');
+    //每隔500毫秒输出一个hello,world 输出5次
+
+    function repeat(fun,count,timer){
+      var thisTimer = null;
+      var thisCount = 0;
+      return function(str){
+        thisTimer = setInterval(function(){
+          if(thisCount >= count){
+            clearInterval(thisTimer)
+          }else{
+            fun(str);
+            thisCount++
+          }
+        },timer)
+      }
+    }
+    const repeatfunc = repeat(console.log,5,500);
+    repeatfunc('hello,wrold');
+  </script>
+</body>
+</html>
