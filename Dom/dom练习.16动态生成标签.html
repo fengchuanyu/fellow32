@@ -23,7 +23,13 @@
         console.log(this.innerText);
       }
     }
-
+    //事件委托
+    oUl.onclick = function(e){
+      console.log(e.target);
+      
+      console.log("ul");
+      
+    }
 
     oBtn.onclick = function(){
       var oLi = document.createElement("li");
