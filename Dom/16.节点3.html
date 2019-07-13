@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1">
+    <p id = "p2">hahahha</p>
+    <p id="p1">fellow32</p>
+  </div>
+  <script>
+    var div1 = document.querySelector("#div1");
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    // div1.innerHTML = "<span>hello world</span>"
+    var oSpan = document.createElement("span");
+    oSpan.innerText = "hello world";
+    oSpan.className = "active"
+    // console.log(oSpan);
+    // div1.appendChild(oSpan)
+    // div1.insertBefore(oSpan,p1)
+    // div1.replaceChild(oSpan,p2)
+    div1.removeChild(p2);
+    
+  </script>
+</body>
+</html>
