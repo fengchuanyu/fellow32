@@ -1,100 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    .content{
-      position: relative;
-    }
-    .div1{
-      height: 100px;
-      width: 200px;
-      background-color: red;
-    }
-    .div2{
-      visibility: hidden;
-      height: 200px;
-      width: 200px;
-      background-color: blue;
-    }
-    .content{
-      width: 200px;
-    }
-    .content:hover .div1{
-      /* transition: all 1s ease; */
-      /* animation: test2 0.1s ease 0.8s; */
-      background-color: yellow;
-    }
-    .content:hover .div2{
-      transition: all 1s ease;
-      /* animation: test 1s ease; */
-      height: 400px;
-      position: relative;
-      visibility: visible;
-    }
-    .content .div2 div{
-      display: none;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%)
-    }
-    .content:hover .div2 div{
-      transform: all .2s ease .8s;
-      display: block;
-    }
-    /* @keyframes test2{
-      from{
-        background-color: yellow;
-      }
-      to{
-        background-color: red;
-      }
-    }
-    @keyframes test{
-      0%{
-        height: 0;
-      }
-      100%{
-        height: 200px;
-      }
-    } */
-    .div3{
-      height: 50px;
-      width: 50px;
-      background-color: blue;
-      transform: rotate(45deg);
-    }
+
   </style>
 </head>
+
 <body>
+  <div class="div111"><div></div></div>
   <div class="content">
     <div class="div1">ha</div>
-    <div class="div2">
-      <div>hello</div>
-    </div>
+    <div class="div2">hello</div>
   </div>
-  <div class="div3"></div>
-
-  <!-- break;continue
-  内置对象
-  进制 -->
+  <div class="div3">111</div>
+  <select name="" id="sel">
+    <option value="a">a</option>
+  </select>
   <script>
-    var arr = [22,34,63,13,68,222];
-    arr.sort(function(a,b){
-      if(a>b){
-        return -1
-      }else if(a<b){
-        return 1
-      }
-      return 0;
-
-    })
-    console.log(arr);
+    var sel = document.getElementById("sel");
+    sel.options.add(new Option('test','test1'))
+    sel.options.length = 0
+    var bbb = document.createElement("span");
+    bbb.innerText = "123";
+    var ddd = document.getElementsByClassName("content")[0]
+    // console.log(ddd.nextElementSibling.nodeName);
+    // console.log(ddd.nextElementSibling);
+    ddd.insertBefore(bbb,ddd.lastElementChild)
     
-
+    // console.log(ddd.childNodes[0].nodeValue);
+    // console.log(ddd.firstElementChild)
+    // ddd.insertBefore(bbb, ddd.lastElementChild)
+    // // ddd.removeChild(ddd.firstElementChild)
+    // var abc = document.createDocumentFragment();
+    // var abc1 = ddd.cloneNode(true);
+    // abc.appendChild(abc1)
+    // document.getElementsByTagName("body")[0].appendChild(abc);
   </script>
 </body>
+
 </html>
