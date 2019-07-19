@@ -7,38 +7,36 @@
   <title>Document</title>
   <style>
     *{
-      margin: 0;
+      margin:0;
+    }
+    .center,.left,.right{
+      height: 200px;
     }
     .center{
-      float: left;
+      order: 1;
       flex-grow: 1;
-      height: 100px;
-      background-color: blue;
-      order:2
-    }
-    .left,.right{
-      float: left;
-      width: 100px;
-      height: 100px;
       background-color: red;
     }
     .left{
-      order: 1
+      order: 0;
+      flex-basis: 200px;
+      background-color: blue;
     }
     .right{
-      background-color: green;
-      order: 3
+      order: 2;
+      flex-basis: 200px;
+      background-color: yellow;
     }
-    .content{
+    .container{
       display: flex;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-      <div class="center"></div>
-      <div class="left"></div>
-      <div class="right"></div>
+  <div class="container">
+    <div class="center"></div>
+    <div class="left"></div>
+    <div class="right"></div>
   </div>
 </body>
 </html>
