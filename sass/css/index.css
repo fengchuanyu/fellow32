@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*！强制 */
+/* 
+多行注释
+*/
+#div1 {
+  color: #ff00ff;
+}
+#div1 .p1 {
+  border: 1px solid #ff00ff;
+}
+#div1 .p1-span1 {
+  color: black;
+}
+#div1:hover {
+  background-color: red;
+}
+
+#div2 {
+  background-color: #ff00ff;
+}
+
+#div3 {
+  border-color: #ff00ff;
+  border-width: 1px;
+}
+
+#div4 {
+  border-left-color: #ff00ff;
+}
+
+#div5 {
+  width: 10px;
+}
+
+#div6 {
+  width: 10px;
+  height: 200px;
+  background-color: red;
+}
+
+#div7, #div8 {
+  font-size: 20px;
+  color: black;
+}
+
+#div8 {
+  background-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#div9 {
+  height: 4px;
+  font-size: 20px;
+  border-width: 10px;
+  width: 2%;
+}
+
+/*# sourceMappingURL=index.css.map */
