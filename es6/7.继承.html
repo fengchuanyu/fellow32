@@ -57,6 +57,25 @@
     // console.log(student1.name);
     
     // student1.showName()
+    function Person(){
+      this.name = "aa"
+    }
+    Person.prototype.haha = "haha"
+    Person.prototype.showName = function(){
+      console.log(this.name);
+    }
+    function Student(){
+      this.school = "黑大"
+    }
+    Student.prototype = new Person();
+
+    var student1 = new Student()
+    var student2 = new Student()
+    student1.school = "aa"
+    student1.haha = "222"
+    console.log(student2.haha);
+    
+
 
     //组合继承
     // function Person(){

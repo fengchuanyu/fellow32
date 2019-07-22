@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function foo(){
+
+    // }  
+    // let foo1 = function(){
+
+    // }
+
+    // let foo2 = () =>{}
+
+
+    // function foo(a,b) {
+    //   return a+b
+    // }
+    // console.log( foo(1,2));
+    
+    // // let foo2 = (a,b) => { 
+    // //   return a+b
+    // //  }
+    // let foo2 = (a,b) =>{
+    //   a+b
+    // } 
+    //  console.log(foo2(1,2));
+
+
+    // function foo(){
+    //   setTimeout(function(){
+    //     console.log(this);
+    //   },500)
+    // }
+    // foo()
+    
+    // let school = "理工"
+    // let obj = {
+    //   school:"黑大",
+    //   showSchool:function(){
+    //     var that = this
+    //     console.log(this.school);//黑大
+    //     setTimeout(function(){
+    //       console.log(that.school);//
+    //     },1000);
+    //   }
+    // }
+    // obj.showSchool();
+
+
+    // let school = "理工"
+    // let obj = {
+    //   school:"黑大",
+    //   showSchool:function(){
+    //     console.log(this.school);//黑大
+    //     setTimeout(()=>{
+    //       console.log(this.school);//
+    //     },1000);
+    //   }
+    // }
+    // obj.showSchool();
+
+
+      // let a = 10;
+      // console.log(window.a);
+      
+      // let Person=()=>{
+      //   this.name="aa"
+      // }
+      // var person1 = new Person();
+      // console.log(person1.name);
+      
+      let foo = (...arg)=>{
+        console.log(arg);
+      }
+      foo(1,3)
+
+  </script>
+</body>
+
+</html>
