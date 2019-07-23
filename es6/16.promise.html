@@ -97,29 +97,30 @@
 
     // })
 
-    let pro1 = new Promise(function(resolve,reject){
-      $.get("a.json",function(res){
-        // resolve()
-      })
-    })
-    let pro2 = new Promise(function(resolve,reject){
-      $.get("b.json",function(res){
-        reject()
-      })
-    })
-    let pro3 = new Promise(function(resolve,reject){
-      $.get("c.json",function(res){
-        reject()
-      })
-    })
+    // let pro1 = new Promise(function(resolve,reject){
+    //   $.get("a.json",function(res){
+    //     resolve()
+    //   })
+    // })
+    // let pro2 = new Promise(function(resolve,reject){
+    //   $.get("b.json",function(res){
+    //     reject()
+    //   })
+    // })
+    // let pro3 = new Promise(function(resolve,reject){
+    //   $.get("c.json",function(res){
+    //     reject()
+    //   })
+    // })
 
-    Promise.race([pro1,pro2,pro3]).then(function(){
-      console.log("成功");
+    // Promise.race([pro1,pro2,pro3]).then(function(){
+    //   // debugger;
+    //   console.log("成功");
       
-    }).catch(function(){
-      console.log("失败");
+    // }).catch(function(){
+    //   console.log("失败");
       
-    })
+    // })
 
     // Promise.all([pro1,pro2,pro3]).then(function(){
     //   console.log("成功");
@@ -128,6 +129,19 @@
     //   console.log("失败");
       
     // })
+
+    function request(url){
+      $.get(url,function(res){
+        a.next(res);
+      })
+    }
+    function* foo(){
+      console.log(yield request("a.json"));
+      console.log(yield request("b.json"));
+      console.log(yield request("c.json"))
+    }
+    var a = foo();
+    a.next()
   </script>
 </body>
 
