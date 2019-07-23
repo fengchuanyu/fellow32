@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <script>
+
+    // $.get("test.json",function(res){
+    //   console.log(res);
+    // })
+    // console.log("123");
+
+    // var a = 10;
+    // var b = 20;
+    // for(var i = 0;i<10;i++){
+
+    // }
+    // //event loop
+    // setTimeout(function(){
+
+    //   console.log(b);
+    // },1000)
+    // console.log(i);
+
+    //回调地狱
+    // $.get("a.json",function(res){
+    //   console.log(res);
+    //   $.get("b.json",function(res){
+    //     console.log(res);
+    //     $.get("c.json",function(res){
+    //       console.log(res);
+    //     })
+    //   })
+    // })
+
+    // function getDate(url) {
+    //   return new Promise(function (resolve, reject) {
+    //     $.get(url,function(res){
+    //       // console.log(res);
+    //       resolve(res)
+    //     })
+    //   })
+    // }
+
+    // getDate("a.json").then(function(res){
+    //   console.log(res);
+    //   return getDate("b.json")
+    // }).then(function(res){
+    //   console.log(res);
+    //   return getDate("c.json")
+    // }).then(function(res){
+    //   console.log(res);
+    // })
+
+
+
+    // new Promise(function(resolve,reject){
+    //   $.get("a.json",function(res){
+    //     console.log(res);
+    //     // resolve(res);
+    //     reject(res);
+    //   })
+    // }).then(function(res){
+    //   console.log("成功",res);
+
+    // },function(){
+    //   console.log("失败");
+
+    // })
+    // .catch(function(){
+    //   console.log("失败");
+
+    // })
+
+    // new Promise(function (resolve, reject) {
+    //   $.get("a.json", function (res) {
+    //     console.log(res);
+    //     // resolve(res);
+    //     reject(res);
+    //   })
+    // }).then(function () {
+    //   new Promise(function (resolve, reject) {
+    //     $.get("b.json", function (res) {
+    //       console.log(res);
+    //       // resolve(res);
+    //       reject(res);
+    //     })
+    //   })
+    // }).then(function(){
+
+    // })
+
+    let pro1 = new Promise(function(resolve,reject){
+      $.get("a.json",function(res){
+        // resolve()
+      })
+    })
+    let pro2 = new Promise(function(resolve,reject){
+      $.get("b.json",function(res){
+        reject()
+      })
+    })
+    let pro3 = new Promise(function(resolve,reject){
+      $.get("c.json",function(res){
+        reject()
+      })
+    })
+
+    Promise.race([pro1,pro2,pro3]).then(function(){
+      console.log("成功");
+      
+    }).catch(function(){
+      console.log("失败");
+      
+    })
+
+    // Promise.all([pro1,pro2,pro3]).then(function(){
+    //   console.log("成功");
+      
+    // }).catch(function(){
+    //   console.log("失败");
+      
+    // })
+  </script>
+</body>
+
+</html>
