@@ -1,6 +1,8 @@
 const path = require("path");
+const glob              = require("glob")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const PurifyCSSPlugin   = require('purifycss-webpack');
       module.exports    = {
   entry:{
     index: "./src/index.js"
@@ -14,8 +16,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
       {
         test: /\.css$/,
         use : ExtractTextPlugin.extract({
-          fallback  : "style-loader",
-          use       : "css-loader",
+          fallback: "style-loader",
+          use     : [{
+            loader : "css-loader",
+            options: {importLoaders:1}
+        },"postcss-loader"],
           publicPath: "../"
         })
       },{
@@ -36,11 +41,23 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
           fallback: "style-loader",
           use     : ["css-loader","sass-loader"]
         })
+      },{
+        test   : /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use    : {
+        loader : 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
       }
     ]
   },
   plugins:[
     new ExtractTextPlugin("css/main.css"),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, 'src/*.html')),
+    }),
     new HtmlWebpackPlugin({  
       minify:{
         removeAttributeQuotes: true
