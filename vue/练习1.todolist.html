@@ -85,6 +85,7 @@
                 goodName: "",
                 goodPrice: "",
                 goodSearch: "",
+                nowid:5,
                 gCheck: [],
                 dataList: [
                     {
@@ -139,7 +140,8 @@
                 },
                 search() {
                     let thisText = this.goodSearch;
-                    let newArr = this.dataList.filter(function (item, index, arr) {
+                    let newArr = this.dataList.filter( (item, index, arr) => {
+                        console.log(this);
                         if (item.name.includes(thisText)) {
                             return item;
                         }
@@ -151,7 +153,9 @@
                     this.dataList.push(
                         {
                             name: this.goodName,
-                            price: this.goodPrice
+                            price: this.goodPrice,
+                            isChecked:false,
+                            id:this.nowid++
                         }
                     )
                 }
