@@ -17,8 +17,9 @@
         .form-inline {
             margin-bottom: 20px;
         }
-        .active{
-            background-color:red;
+
+        .active {
+            background-color: red;
         }
     </style>
     <script src="./js/vue.js"></script>
@@ -29,7 +30,8 @@
         <form class="form-inline">
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" v-model="goodSearch" class="form-control" id="exampleInputAmount" placeholder="搜索名称">
+                    <input type="text" v-model="goodSearch" class="form-control" id="exampleInputAmount"
+                        placeholder="搜索名称">
                 </div>
             </div>
             <button type="button" class="btn btn-primary" @click="search">搜索</button>
@@ -41,7 +43,8 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail2">商品价格</label>
-                <input type="email" v-model="goodPrice" class="form-control" id="exampleInputEmail2" placeholder="请输入商品价格">
+                <input type="email" v-model="goodPrice" class="form-control" id="exampleInputEmail2"
+                    placeholder="请输入商品价格">
             </div>
             <button type="button" class="btn btn-default" @click="addHandle">添加</button>
         </form>
@@ -63,91 +66,111 @@
                         </th>
                         <td>{{item.name}}</td>
                         <td>{{item.price}}</td>
-                        <td><button type="button" class="btn btn-primary btn-xs">删除</button></td>
+                        <td><button type="button" class="btn btn-primary btn-xs" @click.stop="delsingle(item.id)">删除</button></td>
                     </tr>
                     <tr>
                         <td colspan="2">总价</td>
-                        <td colspan="2"> {{gSum}}</td>
+                        <td > {{gSum}}</td>
+                        <td><button type="button" class="btn btn-primary btn-xs" @click.stop="delCheck">删除选中</button></td>
                     </tr>
                 </tbody>
             </table>
-           
+
         </div>
     </div>
     <script>
         new Vue({
             el: "#app",
             data: {
-                goodName:"",
-                goodPrice:"",
-                goodSearch:"",
-                gCheck:[],
+                goodName: "",
+                goodPrice: "",
+                goodSearch: "",
+                gCheck: [],
                 dataList: [
                     {
-                        id:"1",
-                        name:"衣服",
-                        price:"12",
-                        isChecked:false
+                        id: "1",
+                        name: "衣服",
+                        price: "12",
+                        isChecked: false
                     },
                     {
-                        id:"2",
-                        name:"裤子",
-                        price:"14",
-                        isChecked:false
+                        id: "2",
+                        name: "裤子",
+                        price: "14",
+                        isChecked: false
                     },
                     {
-                        id:"3",
-                        name:"鞋子",
-                        price:"45",
-                        isChecked:false
+                        id: "3",
+                        name: "鞋子",
+                        price: "45",
+                        isChecked: false
                     },
                     {
-                        id:"4",
-                        name:"帽子",
-                        price:"20",
-                        isChecked:false
+                        id: "4",
+                        name: "帽子",
+                        price: "20",
+                        isChecked: false
                     }
                 ]
             },
             methods: {
-                checkLine(index){
+                delCheck(){
+                    let newArr =[]
+                    newArr = this.dataList.filter(function(item){
+                        if(!item.isChecked){
+                            return item;
+                        }
+                    })
+                    this.dataList = newArr;
+                },
+                delsingle(id){
+                    let newArr = [];
+                    newArr = this.dataList.filter(function(item){
+                        if(item.id!=id){
+                            return item;
+                        }
+                    })
+                    console.log(newArr);
+                    this.dataList = newArr;
+                },
+                checkLine(index) {
                     console.log(index)
                     this.dataList[index].isChecked = !this.dataList[index].isChecked;
                 },
-                search(){
+                search() {
                     let thisText = this.goodSearch;
-                    let newArr = this.dataList.filter(function(item,index,arr){
-                        if(item.name.includes(thisText)){
+                    let newArr = this.dataList.filter(function (item, index, arr) {
+                        if (item.name.includes(thisText)) {
                             return item;
                         }
                     })
                     this.dataList = newArr
                 },
-                addHandle(){
-                    console.log(this.goodName,this.goodPrice);
+                addHandle() {
+                    console.log(this.goodName, this.goodPrice);
                     this.dataList.push(
                         {
-                            name:this.goodName,
-                            price:this.goodPrice
+                            name: this.goodName,
+                            price: this.goodPrice
                         }
                     )
                 }
             },
-            computed:{
-                gChe(){
+            computed: {
+                gChe() {
                     let arr = [];
-                    this.dataList.map(function(item,index){
-                        if(item.isChecked){
+                    this.dataList.map(function (item, index) {
+                        if (item.isChecked) {
                             arr.push(item.id)
                         }
                     })
                     return arr
                 },
-                gSum(){
+                gSum() {
                     let sum = 0;
-                    this.dataList.map(function(item,index){
-                        if(item.isChecked){
-                            sum+= parseInt(item.price) 
+                    this.dataList.map(function (item, index) {
+                        if (item.isChecked) {
+                            sum += parseInt(item.price)
                         }
                     })
                     return sum;
