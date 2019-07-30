@@ -11,8 +11,8 @@
 
 <body>
     <div id="app">
-        <weichuang v-on:addchild="addNum"></weichuang>
-        <h1>{{num}}</h1>
+        <weichuang></weichuang>
+        
     </div>
 
     <script>
@@ -23,19 +23,25 @@
                 num: 0
             },
             methods: {
-                addNum(key){
-                    this.num+=key
-                }
+               
             },
             components: {
                 "weichuang": {
-                    template: `<button @click="addHandle">add</button>`,
-                    methods: {
-                        addHandle() {
-                            this.$emit("addchild",10)
-
+                    template: `
+                    <div>
+                        <h1>hello {{str}}</h1>
+                        <h1>hello {{msg}}</h1>
+                        <h1>hello world</h1>
+                    </div>
+                    
+                    `,
+                    data() {
+                        return {
+                            str:"fellow32",
+                            msg:"abc"
                         }
                     },
+                    
                 },
 
             }
