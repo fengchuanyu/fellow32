@@ -81,7 +81,6 @@ export default {
     position  : fixed;
     top       : 0;
     font-size : 0.8rem;
-    position  : relative;
     text-align: center;
 }
 .nav-container header p{
