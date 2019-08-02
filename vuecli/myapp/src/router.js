@@ -12,6 +12,18 @@ export default new Router({
       path     : '/',
       name     : 'movie',
       component: () => import('./views/movie/Movie.vue')
+    },{
+      path:"/music",
+      name:"music",
+      component:() => import("./views/music/Music.vue")
+    },,{
+      path:"/book",
+      name:"book",
+      component:() => import("./views/book/Book.vue")
+    },,{
+      path:"/talk",
+      name:"talk",
+      component:() => import("./views/talk/Talk.vue")
     }
   ]
 })

@@ -2,21 +2,49 @@
     <div :class="[activeClass,'nav-container']">
         <header>
             <p>首页</p>
-            <span>电影</span>
+            <span>{{activeTitle}}</span>
         </header>
         <nav>
             <ul>
-                <li @click="clickHandle" v-for="item in navList">{{item.title}}</li>
-                
+                <li @click="clickHandle(item)" v-for="item in navList">{{item.title}}</li>
             </ul>
         </nav>
     </div>
 </template>
 <script>
 export default {
+    // created() {
+    //     console.log(window.location.pathname)
+    // },
+    props:["activeObj"],
+    // mounted(){
+    //     this.activeClass = this.activeObj.navName;
+    //     this.activeTitle = this.activeObj.title;
+    //     console.log(this.activeTitle)
+    // },
+    computed: {
+        activeObj2(){
+            return this.activeObj.title
+        }
+    },
+    watch: {
+       activeObj2(){
+        this.activeClass = this.activeObj.navName;
+        this.activeTitle = this.activeObj.title;
+       }
+    },
+    methods: {
+        clickHandle(obj){
+            // console.log(obj.pathName)
+            this.$router.push(obj.pathName);
+            this.activeClass = obj.navClass;
+            this.activeTitle = obj.title;
+        }
+    },
     data() {
         return {
             activeClass: "movie",
+            activeTitle:"电影",
             navList    : [
                 {
                     title   : "电影",
@@ -25,18 +53,18 @@ export default {
                 },
                 {
                     title   : "书籍",
-                    pathName: "/",
+                    pathName: "/book",
                     navClass: "book"
                 },
                 {
                     title   : "音乐",
-                    pathName: "/",
-                    navClass: "movie"
+                    pathName: "/music",
+                    navClass: "musci"
                 },
                 {
                     title   : "聊天",
-                    pathName: "/",
-                    navClass: "movie"
+                    pathName: "/talk",
+                    navClass: "talk"
                 }
             ]
         }
