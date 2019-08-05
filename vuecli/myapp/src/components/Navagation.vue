@@ -16,7 +16,7 @@ export default {
     // created() {
     //     console.log(window.location.pathname)
     // },
-    props:["activeObj"],
+    props: ["activeObj"],
     // mounted(){
     //     this.activeClass = this.activeObj.navName;
     //     this.activeTitle = this.activeObj.title;
@@ -44,7 +44,7 @@ export default {
     data() {
         return {
             activeClass: "movie",
-            activeTitle:"电影",
+            activeTitle: "电影",
             navList    : [
                 {
                     title   : "电影",
@@ -52,15 +52,16 @@ export default {
                     navClass: "movie"
                 },
                 {
-                    title   : "书籍",
-                    pathName: "/book",
-                    navClass: "book"
-                },
-                {
                     title   : "音乐",
                     pathName: "/music",
                     navClass: "musci"
                 },
+                {
+                    title   : "书籍",
+                    pathName: "/book",
+                    navClass: "book"
+                },
+                
                 {
                     title   : "聊天",
                     pathName: "/talk",
@@ -73,9 +74,8 @@ export default {
 </script>
 <style scoped>
 .nav-container header,.nav-container nav{
-    height          : 1rem;
-    background-color: gray;
-    width           : 100%;
+    height: 1rem;
+    width : 100%;
 }
 .nav-container header{
     position  : fixed;
