@@ -35,6 +35,10 @@ export default new Router({
       path:"/movie/detail",
       name:"moviedetail",
       component:()=> import("./views/movie/MovieDetail.vue")
+    },{
+      path:"/book/detail",
+      name:"bookdetail",
+      component:()=> import("./views/book/BookDetail.vue")
     }
   ]
 })
