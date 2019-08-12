@@ -1,0 +1,21 @@
+<view class="container">
+<input bindinput="inpHandle" type="text"/>
+<view>{{str}}</view>
+<button type="primary" size="mini" bindtap="tapHandle">按钮</button>
+<view>{{msg}}</view>
+<view wx:for="{{arr}}" wx:key="index">{{item}}</view>
+<view wx:if="{{isShow}}">fellow32</view>
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</checkbox-group>
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+</view>
