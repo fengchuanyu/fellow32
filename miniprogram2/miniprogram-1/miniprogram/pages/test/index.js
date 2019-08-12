@@ -17,9 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id);
+    this.getData()
   },
-  subHandle(){
+  subHandle(aa){
     // const db = wx.cloud.database({
     //   env:"release-a38306"
     // })
@@ -51,6 +51,33 @@ Page({
         dataList:res.data
       })
     })
+  },
+  userUpdate(e){
+
+    console.log(e.target.dataset.id)
+    db.collection('test_user').doc(e.target.dataset.id).update({
+      // data 传入需要局部更新的数据
+      data: {
+        // 表示将 done 字段置为 true
+        phone: '000000'
+      }
+    })
+      .then(()=>{
+        this.getData()
+      })
+      .catch(console.error)
+  },
+  //删除数据
+  userRemove(e){
+    wx.showLoading({
+      title: '删除数据...',
+    })
+    db.collection('test_user').doc(e.target.dataset.id).remove()
+      .then(()=>{
+        this.getData();
+        wx.hideLoading()
+      })
+      .catch(console.error)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,23 +1,11 @@
 <van-cell-group>
-  <van-field
-    bind:input="inpHandle"
-    value="{{ username }}"
-    label="用户名"
-    data-name="username"
-    placeholder="请输入用户名"
-    
-  />
-  <van-field
-    bind:input="inpHandle"
-    value="{{ phone }}"
-    label="手机号"
-    data-name="phone"
-    placeholder="请输入手机号"
-    border="{{ false }}"
-  />
+  <van-field bind:input="inpHandle" value="{{ username }}" label="用户名" data-name="username" placeholder="请输入用户名" />
+  <van-field bind:input="inpHandle" value="{{ phone }}" label="手机号" data-name="phone" placeholder="请输入手机号" border="{{ false }}" />
 </van-cell-group>
 <van-button size="large" type="primary" bindtap="subHandle">提交</van-button>
 
-<view wx:for="{{dataList}}">
-{{item.username}}---{{item.phone}}
+<view wx:for="{{dataList}}" wx:key="index">
+  {{item.username}}---{{item.phone}}
+  <van-button size="mini" type="danger" data-id="{{item._id}}" bindtap="userUpdate">修改</van-button>
+  <van-button size="mini" type="warning" data-id="{{item._id}}" bindtap="userRemove">删除</van-button>
 </view>
