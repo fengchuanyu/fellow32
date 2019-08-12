@@ -22,7 +22,12 @@ Page({
     console.log('checkbox发生change事件，携带value值为：', e.detail.value)
   },
   tapHandle(){
-    console.log("com")
+    // wx.navigateTo({
+    //   url: '../mine/index',
+    // })
+    wx.switchTab({
+      url: '../mine/index',
+    })
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -40,7 +45,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
   },
 
   /**
