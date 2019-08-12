@@ -25,8 +25,12 @@ Page({
     // wx.navigateTo({
     //   url: '../mine/index',
     // })
-    wx.switchTab({
-      url: '../mine/index',
+    // wx.switchTab({
+    //   url: '../mine/index',
+    // })
+
+    wx.navigateTo({
+      url: '../test/index?id=123',
     })
   },
   bindPickerChange: function (e) {
