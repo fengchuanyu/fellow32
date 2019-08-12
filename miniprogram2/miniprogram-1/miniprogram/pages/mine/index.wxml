@@ -10,3 +10,8 @@
 <button bindtap="changeAutoplay"> autoplay </button>
 <slider bindchange="intervalChange" show-value min="500" max="2000"/>
 <slider bindchange="durationChange" show-value min="1000" max="10000"/>
+
+<van-button type="warning">警告按钮</van-button>
+<view wx:for="{{movieList}}">
+<image src="{{item.cover.url}}"/>
+</view>

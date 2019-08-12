@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    movieList:[],
     imgUrls: [
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
       'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
@@ -39,7 +40,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // console.log("onload")
+    wx.request({
+      url: 'https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=10',
+      success:(res)=>{
+        this.setData({
+          movieList: res.data.subject_collection_items
+        })
+      }
+    })
   },
 
   /**
@@ -74,7 +83,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log("res");
   },
 
   /**

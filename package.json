@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "postcss-loader": "^3.0.0"
+  },
+  "dependencies": {
+    "vant-weapp": "^0.5.18"
   }
 }
