@@ -9,3 +9,5 @@
   <van-button size="mini" type="danger" data-id="{{item._id}}" bindtap="userUpdate">修改</van-button>
   <van-button size="mini" type="warning" data-id="{{item._id}}" bindtap="userRemove">删除</van-button>
 </view>
+
+<van-button size="large" type="primary" bindtap="updateAllHandle">批量修改</van-button>

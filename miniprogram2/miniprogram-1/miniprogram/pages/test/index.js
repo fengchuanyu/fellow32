@@ -19,6 +19,18 @@ Page({
   onLoad: function (options) {
     this.getData()
   },
+  updateAllHandle(){
+    wx.showLoading({
+      title: 'update',
+    })
+    wx.cloud.callFunction({
+      name:"updateuser"
+    }).then((res)=>{
+      console.log(res)
+      this.getData()
+      wx.hideLoading()
+    })
+  },
   subHandle(aa){
     // const db = wx.cloud.database({
     //   env:"release-a38306"

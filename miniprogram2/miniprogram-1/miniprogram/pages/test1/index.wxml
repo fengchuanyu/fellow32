@@ -1,0 +1,1 @@
+<van-button size="large" type="primary" bindtap="subHandle">提交</van-button>
