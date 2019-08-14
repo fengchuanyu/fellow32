@@ -7,6 +7,23 @@ const db = cloud.database({
 const testuser = db.collection('test_user');
 //  /student/list
 
+router.post("/del",async (ctx,next)=>{
+    console.log(ctx.request.body)
+
+    try {
+        await testuser.where({
+          _id: ctx.request.body.id
+        }).remove()
+      } catch(e) {
+        console.error(e)
+      }
+
+    ctx.body={
+        code:20000,
+        data:"删除成功"
+    }
+}),
+
 router.get("/list", async (ctx, next) => {
     console.log(ctx.query)
     let res = null;
@@ -19,3 +36,5 @@ router.get("/list", async (ctx, next) => {
         }
     
 })
+
+module.exports = router;

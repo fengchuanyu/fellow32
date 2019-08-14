@@ -3,19 +3,12 @@
     <el-table :data="tableData" style="width: 100%">
       <el-table-column label="日期" width="180">
         <template slot-scope="scope">
-          <i class="el-icon-time"></i>
-          <span style="margin-left: 10px">{{ scope.row.date }}</span>
+          <span style="margin-left: 10px">{{ scope.row.phone }}</span>
         </template>
       </el-table-column>
       <el-table-column label="姓名" width="180">
         <template slot-scope="scope">
-          <el-popover trigger="hover" placement="top">
-            <p>姓名: {{ scope.row.name }}</p>
-            <p>住址: {{ scope.row.address }}</p>
-            <div slot="reference" class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
-            </div>
-          </el-popover>
+          <span>{{ scope.row.username }}</span>
         </template>
       </el-table-column>
       <el-table-column label="操作">
@@ -28,39 +21,35 @@
   </div>
 </template>
 <script>
+import { getList,del } from '@/api/student'
 export default {
   data() {
     return {
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        }
-      ]
+      tableData: []
     };
   },
+  created() {
+    this.getData();
+  },
   methods: {
+    getData(){
+      getList().then((res)=>{
+        console.log(res)
+        this.tableData= res.data.data
+      })
+    },
     handleEdit(index, row) {
       console.log(index, row);
     },
     handleDelete(index, row) {
       console.log(index, row);
+      let params = {
+        id:row._id
+      }
+      del(params).then((res)=>{
+        console.log(res)
+        this.getData();
+      })
     }
   }
 };
